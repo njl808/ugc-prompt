@@ -1,0 +1,72 @@
+# Secure API Key Storage
+.secure_config/
+*.enc
+*.key
+
+# Environment Variables
+.env
+.env.local
+.env.production
+.env.staging
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Uploads and temporary files
+uploads/
+work/
+*.tmp
+*.temp
+
+# Logs
+*.log
+logs/
+
+# Sensitive files (add any other sensitive file patterns)
+*secret*
+*private*
+*credential*
+service-account*.json

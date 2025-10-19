@@ -1,0 +1,15 @@
+
+version: '3.8'
+
+services:
+  ugc-app:
+    build: .
+    ports:
+      - "5050:5050"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - API_KEY_PASSWORD=${API_KEY_PASSWORD}
+    volumes:
+      - ./uploads:/app/uploads
+      - ./.secure_config:/app/.secure_config
+    restart: unless-stopped

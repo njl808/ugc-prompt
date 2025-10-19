@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - UGC Prompt Studio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tutorial.css') }}">
+</head>
+<body>
+    <div class="tutorial-container">
+        <!-- Header -->
+        <header class="tutorial-header">
+            <div class="header-content">
+                <div class="header-branding">
+                    <a href="/" class="back-link">
+                        <i class='bx bx-arrow-back'></i>
+                        <span>Back to Studio</span>
+                    </a>
+                    <h1 class="header-title"><i class='bx bx-book-open'></i> UGC Studio Tutorial</h1>
+                    <p class="header-subtitle">Master the art of creating high-converting UGC video prompts</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-ghost" id="theme-toggle">
+                        <i class='bx bx-moon'></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="tutorial-main">
+            <!-- Tutorial Navigation -->
+            <nav class="tutorial-nav">
+                <div class="nav-content">
+                    <h3>Tutorial Sections</h3>
+                    <ul class="nav-list">
+                        <li><a href="#getting-started" class="nav-link active">Getting Started</a></li>
+                        <li><a href="#product-analysis" class="nav-link">Product Analysis</a></li>
+                        <li><a href="#actor-selection" class="nav-link">Actor Selection</a></li>
+                        <li><a href="#visual-settings" class="nav-link">Visual Settings</a></li>
+                        <li><a href="#hook-strategies" class="nav-link">Hook Strategies</a></li>
+                        <li><a href="#prompt-generation" class="nav-link">Prompt Generation</a></li>
+                        <li><a href="#best-practices" class="nav-link">Best Practices</a></li>
+                        <li><a href="#troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Tutorial Content -->
+            <div class="tutorial-content">
+                <!-- Getting Started Section -->
+                <section id="getting-started" class="tutorial-section active">
+                    <div class="section-header">
+                        <h2><i class='bx bx-play-circle'></i> Getting Started</h2>
+                        <p>Welcome to UGC Prompt Studio! This comprehensive guide will help you create professional UGC video prompts that convert.</p>
+                    </div>
+
+                    <div class="content-grid">
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-target-lock'></i>
+                            </div>
+                            <h3>What is UGC?</h3>
+                            <p>User-Generated Content (UGC) is authentic content created by real customers showcasing products. It's proven to increase conversion rates by up to 79% because viewers trust real people over traditional ads.</p>
+                            <div class="highlight-box">
+                                <strong>Key Benefits:</strong>
+                                <ul>
+                                    <li>Higher trust and authenticity</li>
+                                    <li>Better conversion rates</li>
+                                    <li>Cost-effective marketing</li>
+                                    <li>Increased social proof</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-cog'></i>
+                            </div>
+                            <h3>How UGC Studio Works</h3>
+                            <p>Our 5-step process guides you through creating professional UGC prompts:</p>
+                            <div class="process-steps">
+                                <div class="step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <strong>Product Analysis</strong>
+                                        <p>Upload your product image or describe it manually</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <strong>Actor Selection</strong>
+                                        <p>Choose the perfect creator persona for your audience</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-content">
+                                        <strong>Visual Settings</strong>
+                                        <p>Configure location, lighting, and camera work</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">4</span>
+                                    <div class="step-content">
+                                        <strong>Hook Strategy</strong>
+                                        <p>Create compelling opening hooks that grab attention</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">5</span>
+                                    <div class="step-content">
+                                        <strong>Generate Prompt</strong>
+                                        <p>Get your professional UGC video prompt</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-rocket'></i>
+                            </div>
+                            <h3>Quick Start Guide</h3>
+                            <p>Ready to create your first prompt? Follow these steps:</p>
+                            <div class="quick-start-list">
+                                <div class="quick-step">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Have your product image ready (PNG, JPG, max 16MB)</span>
+                                </div>
+                                <div class="quick-step">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Know your target audience (age, interests, demographics)</span>
+                                </div>
+                                <div class="quick-step">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Decide on your content type (unboxing, review, tutorial, lifestyle)</span>
+                                </div>
+                                <div class="quick-step">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Click "Start Creating" and follow the guided process</span>
+                                </div>
+                            </div>
+                            <a href="/" class="btn btn-primary">
+                                <i class='bx bx-play'></i>
+                                Start Creating Now
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Additional sections would continue here -->
+                <section id="product-analysis" class="tutorial-section">
+                    <div class="section-header">
+                        <h2><i class='bx bx-search-alt'></i> Product Analysis</h2>
+                        <p>Learn how to effectively analyze your product for optimal UGC creation.</p>
+                    </div>
+                    <div class="content-grid">
+                        <div class="tutorial-card">
+                            <h3>Image Upload vs Manual Description</h3>
+                            <p>Choose the method that works best for your workflow and product type.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/tutorial.js') }}"></script>
+</body>
+</html>

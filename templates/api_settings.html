@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Settings - UGC Prompt Studio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .settings-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .settings-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .settings-header h1 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+        
+        .settings-header p {
+            color: #6b7280;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        
+        .btn {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        
+        .btn:hover {
+            background: #1d4ed8;
+        }
+        
+        .btn-secondary {
+            background: #6b7280;
+        }
+        
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+        
+        .btn-danger {
+            background: #dc2626;
+        }
+        
+        .btn-danger:hover {
+            background: #b91c1c;
+        }
+        
+        .status-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .status-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+        
+        .status-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+        }
+        
+        .api-status {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .status-connected {
+            background: #10b981;
+        }
+        
+        .status-disconnected {
+            background: #ef4444;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .help-text {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+        
+        .security-info {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .security-info h3 {
+            color: #0c4a6e;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .security-info ul {
+            margin: 0;
+            padding-left: 1.25rem;
+            color: #0369a1;
+        }
+        
+        .security-info li {
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <a href="{{ url_for('index') }}" class="back-link">← Back to App</a>
+        
+        <div class="settings-header">
+            <h1>🔐 API Settings</h1>
+            <p>Securely manage your OpenAI API key</p>
+        </div>
+        
+        <!-- API Status -->
+        <div class="api-status">
+            <div class="status-indicator">
+                <div class="status-dot {{ 'status-connected' if api_connected else 'status-disconnected' }}"></div>
+                <span>OpenAI API: {{ 'Connected' if api_connected else 'Not Connected' }}</span>
+            </div>
+            {% if api_connected %}
+                <button type="button" class="btn btn-secondary" onclick="testConnection()" style="width: auto; padding: 0.5rem 1rem;">Test Connection</button>
+            {% endif %}
+        </div>
+        
+        <!-- Status Messages -->
+        <div id="statusMessage" style="display: none;"></div>
+        
+        <!-- Security Information -->
+        <div class="security-info">
+            <h3>🛡️ Security Features</h3>
+            <ul>
+                <li>API keys are encrypted with military-grade AES encryption</li>
+                <li>Protected by your master password</li>
+                <li>Stored locally on your machine only</li>
+                <li>Never transmitted or stored in plain text</li>
+            </ul>
+        </div>
+        
+        <!-- API Key Setup Form -->
+        <form id="apiKeyForm">
+            <div class="form-group">
+                <label for="masterPassword">Master Password</label>
+                <input type="password" id="masterPassword" name="masterPassword" required 
+                       placeholder="Enter your master password">
+                <div class="help-text">
+                    {% if has_stored_keys %}
+                        Enter your existing master password to access stored keys
+                    {% else %}
+                        Create a strong password to encrypt your API keys (8+ characters)
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="apiKey">OpenAI API Key</label>
+                <input type="password" id="apiKey" name="apiKey" 
+                       placeholder="sk-..." 
+                       {% if api_connected %}value="••••••••••••••••••••••••••••••••••••••••••••••••••••"{% endif %}>
+                <div class="help-text">
+                    Get your API key from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Platform</a>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn">
+                {% if has_stored_keys %}Update API Key{% else %}Save API Key{% endif %}
+            </button>
+        </form>
+        
+        {% if has_stored_keys %}
+        <!-- Management Actions -->
+        <button type="button" class="btn btn-secondary" onclick="viewStoredServices()">
+            View Stored Services
+        </button>
+        
+        <button type="button" class="btn btn-danger" onclick="deleteApiKey()">
+            Delete Stored API Key
+        </button>
+        {% endif %}
+    </div>
+
+    <script>
+        // Show status message
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.className = `status-message status-${type}`;
+            statusDiv.textContent = message;
+            statusDiv.style.display = 'block';
+            
+            // Auto-hide after 5 seconds for success messages
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusDiv.style.display = 'none';
+                }, 5000);
+            }
+        }
+        
+        // Handle form submission
+        document.getElementById('apiKeyForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {
+                masterPassword: formData.get('masterPassword'),
+                apiKey: formData.get('apiKey')
+            };
+            
+            // Don't send API key if it's the masked value
+            if (data.apiKey === '••••••••••••••••••••••••••••••••••••••••••••••••••••') {
+                delete data.apiKey;
+            }
+            
+            try {
+                const response = await fetch('/api/save-key', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showStatus(result.message, 'success');
+                    // Reload page after 2 seconds to update status
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    showStatus(result.error, 'error');
+                }
+            } catch (error) {
+                showStatus('Network error: ' + error.message, 'error');
+            }
+        });
+        
+        // Test connection
+        async function testConnection() {
+            const password = document.getElementById('masterPassword').value;
+            if (!password) {
+                showStatus('Please enter your master password first', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/test-connection', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ masterPassword: password })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showStatus('✅ OpenAI API connection successful!', 'success');
+                } else {
+                    showStatus('❌ Connection failed: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showStatus('Network error: ' + error.message, 'error');
+            }
+        }
+        
+        // View stored services
+        async function viewStoredServices() {
+            const password = document.getElementById('masterPassword').value;
+            if (!password) {
+                showStatus('Please enter your master password first', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/list-services', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ masterPassword: password })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    const services = result.services.join(', ');
+                    showStatus(`Stored services: ${services}`, 'info');
+                } else {
+                    showStatus('Error: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showStatus('Network error: ' + error.message, 'error');
+            }
+        }
+        
+        // Delete API key
+        async function deleteApiKey() {
+            if (!confirm('Are you sure you want to delete your stored OpenAI API key? This cannot be undone.')) {
+                return;
+            }
+            
+            const password = document.getElementById('masterPassword').value;
+            if (!password) {
+                showStatus('Please enter your master password first', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/delete-key', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        masterPassword: password,
+                        serviceName: 'openai'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showStatus(result.message, 'success');
+                    // Reload page after 2 seconds
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    showStatus('Error: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showStatus('Network error: ' + error.message, 'error');
+            }
+        }
+    </script>
+</body>
+</html>

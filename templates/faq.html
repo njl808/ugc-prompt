@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - UGC Prompt Studio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}">
+</head>
+<body>
+    <div class="faq-container">
+        <!-- Header -->
+        <header class="faq-header">
+            <div class="header-content">
+                <div class="header-branding">
+                    <a href="/" class="back-link">
+                        <i class='bx bx-arrow-back'></i>
+                        <span>Back to Studio</span>
+                    </a>
+                    <h1 class="header-title"><i class='bx bx-help-circle'></i> Frequently Asked Questions</h1>
+                    <p class="header-subtitle">Find quick answers to common questions about UGC Prompt Studio</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-ghost" id="theme-toggle">
+                        <i class='bx bx-moon'></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="faq-main">
+            <!-- Search Bar -->
+            <div class="faq-search">
+                <div class="search-container">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="faq-search-input" placeholder="Search FAQ..." />
+                    <button class="search-clear" id="search-clear" style="display: none;">
+                        <i class='bx bx-x'></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="faq-categories">
+                <button class="category-btn active" data-category="all">All Questions</button>
+                <button class="category-btn" data-category="getting-started">Getting Started</button>
+                <button class="category-btn" data-category="product-analysis">Product Analysis</button>
+                <button class="category-btn" data-category="actors">Actors & Performance</button>
+                <button class="category-btn" data-category="technical">Technical Issues</button>
+                <button class="category-btn" data-category="prompts">Prompt Generation</button>
+                <button class="category-btn" data-category="billing">Billing & Plans</button>
+            </div>
+
+            <!-- FAQ Content -->
+            <div class="faq-content">
+                <!-- Getting Started -->
+                <div class="faq-section" data-category="getting-started">
+                    <h2><i class='bx bx-play-circle'></i> Getting Started</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What is UGC Prompt Studio?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>UGC Prompt Studio is an AI-powered tool that helps you create professional User-Generated Content (UGC) video prompts. It analyzes your product, selects appropriate actors, configures visual settings, and generates optimized prompts for AI video generation platforms.</p>
+                            <p>The tool is designed for marketers, content creators, and businesses who want to create authentic, high-converting video advertisements that look like real customer testimonials.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I get started?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Getting started is simple:</p>
+                            <ol>
+                                <li>Have your product image ready (or prepare a detailed description)</li>
+                                <li>Know your target audience</li>
+                                <li>Follow our 5-step guided process: Product → Actor → Visual → Hook → Generate</li>
+                                <li>Copy your generated prompt and use it with AI video tools</li>
+                            </ol>
+                            <p>The entire process takes just 5-10 minutes!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do I need any special skills or experience?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No special skills required! UGC Prompt Studio is designed for everyone:</p>
+                            <ul>
+                                <li><strong>Beginners:</strong> Follow our guided process and built-in recommendations</li>
+                                <li><strong>Marketers:</strong> Leverage advanced features and A/B testing capabilities</li>
+                                <li><strong>Content Creators:</strong> Use custom uploads and detailed customization options</li>
+                            </ul>
+                            <p>Our tutorial and FAQ sections provide all the guidance you need.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What types of products work best?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>UGC Prompt Studio works with virtually any product:</p>
+                            <ul>
+                                <li><strong>Physical Products:</strong> Electronics, clothing, beauty, home goods, food</li>
+                                <li><strong>Digital Products:</strong> Apps, software, online courses, subscriptions</li>
+                                <li><strong>Services:</strong> Fitness programs, consulting, tools, platforms</li>
+                            </ul>
+                            <p>The key is having clear product information and knowing your target audience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Analysis -->
+                <div class="faq-section" data-category="product-analysis">
+                    <h2><i class='bx bx-search-alt'></i> Product Analysis</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Should I upload an image or write a manual description?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Image Upload (Recommended):</strong></p>
+                            <ul>
+                                <li>More accurate and detailed analysis</li>
+                                <li>AI captures colors, materials, branding automatically</li>
+                                <li>Faster and more convenient</li>
+                                <li>Better for physical products</li>
+                            </ul>
+                            <p><strong>Manual Description:</strong></p>
+                            <ul>
+                                <li>Better control over specific details</li>
+                                <li>Good for digital products or services</li>
+                                <li>When you don't have high-quality images</li>
+                                <li>For emphasizing specific features</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What makes a good product image?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For best results, use images that are:</p>
+                            <ul>
+                                <li><strong>High Resolution:</strong> At least 800x800 pixels</li>
+                                <li><strong>Well-Lit:</strong> Natural light or professional lighting</li>
+                                <li><strong>Clear Focus:</strong> Product is sharp and in focus</li>
+                                <li><strong>Clean Background:</strong> Minimal distractions</li>
+                                <li><strong>Show Key Features:</strong> Branding, colors, textures visible</li>
+                                <li><strong>Proper Framing:</strong> Product fills most of the frame</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What file formats and sizes are supported?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Supported Formats:</strong> PNG, JPG, JPEG, GIF, WebP</p>
+                            <p><strong>Maximum File Size:</strong> 16MB</p>
+                            <p><strong>Recommended Size:</strong> 1024x1024 pixels or larger</p>
+                            <p>If your file is too large, compress it using online tools or image editing software before uploading.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How accurate is the AI analysis?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our AI analysis is highly accurate for:</p>
+                            <ul>
+                                <li>Colors and visual appearance</li>
+                                <li>Materials and textures</li>
+                                <li>Brand logos and text</li>
+                                <li>Product category and type</li>
+                                <li>Key visual features</li>
+                            </ul>
+                            <p>The analysis works best with clear, high-quality images. If results seem inaccurate, try uploading a different image or use the manual description method.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actors & Performance -->
+                <div class="faq-section" data-category="actors">
+                    <h2><i class='bx bx-user'></i> Actors & Performance</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I choose the right actor for my product?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Consider these factors when selecting an actor:</p>
+                            <ul>
+                                <li><strong>Target Audience Age:</strong> Match actor age to your customers</li>
+                                <li><strong>Product Relevance:</strong> Choose someone who would realistically use your product</li>
+                                <li><strong>Lifestyle Alignment:</strong> Actor's persona should match your brand</li>
+                                <li><strong>Platform Preference:</strong> Some actors work better on specific platforms</li>
+                            </ul>
+                            <p><strong>Popular Choices:</strong></p>
+                            <ul>
+                                <li><strong>Emma (Girl Next Door):</strong> Broad appeal, trustworthy</li>
+                                <li><strong>Jake (Gym King):</strong> Fitness, health, lifestyle products</li>
+                                <li><strong>Maya (Gamer Girl):</strong> Tech, gaming, Gen-Z products</li>
+                                <li><strong>Sarah (Super Mom):</strong> Family, household, parenting products</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I upload my own actor photos?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! You can upload custom actor photos for personalized content.</p>
+                            <p><strong>Requirements:</strong></p>
+                            <ul>
+                                <li>Clear, front-facing photos</li>
+                                <li>Good lighting and image quality</li>
+                                <li>Appropriate attire for your brand</li>
+                                <li>You must have permission to use the photo</li>
+                            </ul>
+                            <p><strong>Important:</strong> Only upload photos you own or have explicit permission to use. Respect privacy and copyright laws.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What's the difference between energy levels and tones?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Energy Levels:</strong></p>
+                            <ul>
+                                <li><strong>Calm:</strong> Relaxed, composed presentation</li>
+                                <li><strong>Moderate:</strong> Balanced, natural energy</li>
+                                <li><strong>High:</strong> Enthusiastic, dynamic performance</li>
+                            </ul>
+                            <p><strong>Tones:</strong></p>
+                            <ul>
+                                <li><strong>Conversational:</strong> Natural, friendly dialogue</li>
+                                <li><strong>Excited:</strong> Enthusiastic, upbeat delivery</li>
+                                <li><strong>Educational:</strong> Informative, instructive approach</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Issues -->
+                <div class="faq-section" data-category="technical">
+                    <h2><i class='bx bx-wrench'></i> Technical Issues</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>My image upload is failing. What should I do?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Common causes and solutions:</strong></p>
+                            <ul>
+                                <li><strong>File too large:</strong> Compress to under 16MB</li>
+                                <li><strong>Unsupported format:</strong> Use PNG, JPG, JPEG, GIF, or WebP</li>
+                                <li><strong>Poor internet connection:</strong> Check your connection and try again</li>
+                                <li><strong>Browser issues:</strong> Try refreshing the page or using a different browser</li>
+                            </ul>
+                            <p>If problems persist, switch to the manual description method.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>The page is loading slowly or not responding. Help!</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Quick fixes:</strong></p>
+                            <ol>
+                                <li><strong>Refresh the page:</strong> Press F5 or Ctrl+R</li>
+                                <li><strong>Clear browser cache:</strong> Ctrl+Shift+Delete</li>
+                                <li><strong>Check internet connection:</strong> Ensure stable connection</li>
+                                <li><strong>Try different browser:</strong> Chrome, Firefox, Safari, Edge</li>
+                                <li><strong>Disable extensions:</strong> Ad blockers might interfere</li>
+                            </ol>
+                            <p>Your work is auto-saved every 30 seconds, so you won't lose progress!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What browsers are supported?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Fully Supported:</strong></p>
+                            <ul>
+                                <li>Chrome 90+</li>
+                                <li>Firefox 88+</li>
+                                <li>Safari 14+</li>
+                                <li>Edge 90+</li>
+                            </ul>
+                            <p><strong>Mobile:</strong> iOS Safari 14+, Chrome Mobile 90+</p>
+                            <p>For best experience, use the latest version of your preferred browser.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>I lost my work! Is there auto-save?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes! Auto-save features:</strong></p>
+                            <ul>
+                                <li>Automatic save every 30 seconds</li>
+                                <li>Manual save with Ctrl+S</li>
+                                <li>Session restoration when you return</li>
+                                <li>Progress saved locally in your browser</li>
+                            </ul>
+                            <p>Look for the auto-save indicator in the bottom-right corner. If you lose work, try refreshing the page to restore your last session.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prompt Generation -->
+                <div class="faq-section" data-category="prompts">
+                    <h2><i class='bx bx-magic-wand'></i> Prompt Generation</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I use my generated prompt?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Steps to use your prompt:</strong></p>
+                            <ol>
+                                <li>Copy the entire generated prompt</li>
+                                <li>Open your AI video generation platform (Runway, Pika, etc.)</li>
+                                <li>Paste the prompt exactly as provided</li>
+                                <li>Generate your video</li>
+                                <li>Download and use in your marketing</li>
+                            </ol>
+                            <p><strong>Important:</strong> Don't edit the prompt sections - they're optimized for best results!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Which AI video platforms work with these prompts?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Compatible Platforms:</strong></p>
+                            <ul>
+                                <li><strong>Runway ML:</strong> Professional AI video generation</li>
+                                <li><strong>Pika Labs:</strong> High-quality video creation</li>
+                                <li><strong>Stable Video Diffusion:</strong> Open-source option</li>
+                                <li><strong>Leonardo AI:</strong> Creative video generation</li>
+                                <li><strong>Most text-to-video tools</strong> that accept detailed prompts</li>
+                            </ul>
+                            <p>Our prompts are formatted to work with any platform that accepts text-based video generation prompts.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Why does my prompt include "DO NOT SUBSTITUTE ANOTHER PRODUCT"?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>This instruction is crucial for accuracy:</p>
+                            <ul>
+                                <li>Prevents AI from using similar but different products</li>
+                                <li>Ensures your exact product appears in the video</li>
+                                <li>Maintains brand consistency and accuracy</li>
+                                <li>Protects against generic substitutions</li>
+                            </ul>
+                            <p>Always keep this instruction in your prompt for best results!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I modify the generated prompt?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>We recommend using prompts as-is</strong> for optimal results, but you can:</p>
+                            <ul>
+                                <li><strong>Safe to modify:</strong> Custom dialogue/hook text</li>
+                                <li><strong>Avoid changing:</strong> Product descriptions, technical specs, actor descriptions</li>
+                                <li><strong>For major changes:</strong> Generate a new prompt with different settings</li>
+                            </ul>
+                            <p>If you need different results, it's better to create a new prompt with adjusted settings rather than editing the generated text.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing & Plans -->
+                <div class="faq-section" data-category="billing">
+                    <h2><i class='bx bx-credit-card'></i> Billing & Plans</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is UGC Prompt Studio free to use?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>UGC Prompt Studio offers both free and premium features:</p>
+                            <p><strong>Free Features:</strong></p>
+                            <ul>
+                                <li>Basic prompt generation</li>
+                                <li>Standard actor selection</li>
+                                <li>Manual product descriptions</li>
+                                <li>Basic visual settings</li>
+                            </ul>
+                            <p><strong>Premium Features:</strong></p>
+                            <ul>
+                                <li>AI-powered image analysis</li>
+                                <li>Custom actor uploads</li>
+                                <li>Advanced hook strategies</li>
+                                <li>Unlimited prompt generation</li>
+                                <li>Priority support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How much does the premium version cost?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Pricing Plans:</strong></p>
+                            <ul>
+                                <li><strong>Starter:</strong> $19/month - 50 prompts, basic features</li>
+                                <li><strong>Professional:</strong> $49/month - 200 prompts, all features</li>
+                                <li><strong>Agency:</strong> $99/month - Unlimited prompts, team features</li>
+                            </ul>
+                            <p>All plans include a 7-day free trial. No setup fees or hidden costs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I cancel my subscription anytime?</h3>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes, absolutely!</strong></p>
+                            <ul>
+                                <li>Cancel anytime from your account settings</li>
+                                <li>No cancellation fees or penalties</li>
+                                <li>Access continues until end of billing period</li>
+                                <li>All your generated prompts remain accessible</li>
+                            </ul>
+                            <p>We believe in flexible, no-commitment pricing that works for your business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <div class="no-results-content">
+                    <i class='bx bx-search-alt-2'></i>
+                    <h3>No results found</h3>
+                    <p>Try different keywords or browse our categories above.</p>
+                    <button class="btn btn-secondary" onclick="document.getElementById('faq-search-input').value = ''; document.getElementById('faq-search-input').dispatchEvent(new Event('input'));">
+                        Clear Search
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="faq-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Still need help?</h4>
+                    <p>Can't find what you're looking for? Check out our comprehensive tutorial or contact support.</p>
+                    <div class="footer-actions">
+                        <a href="/tutorial" class="btn btn-primary">
+                            <i class='bx bx-book-open'></i>
+                            View Tutorial
+                        </a>
+                        <a href="mailto:support@ugcstudio.com" class="btn btn-secondary">
+                            <i class='bx bx-envelope'></i>
+                            Contact Support
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="/">Studio</a>
+                    <a href="/tutorial">Tutorial</a>
+                    <a href="/faq">FAQ</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/faq.js') }}"></script>
+</body>
+</html>

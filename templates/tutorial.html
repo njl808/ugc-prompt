@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - UGC Prompt Studio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tutorial.css') }}">
+</head>
+<body>
+    <div class="tutorial-container">
+        <!-- Header -->
+        <header class="tutorial-header">
+            <div class="header-content">
+                <div class="header-branding">
+                    <a href="/" class="back-link">
+                        <i class='bx bx-arrow-back'></i>
+                        <span>Back to Studio</span>
+                    </a>
+                    <h1 class="header-title"><i class='bx bx-book-open'></i> UGC Studio Tutorial</h1>
+                    <p class="header-subtitle">Master the art of creating high-converting UGC video prompts</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-ghost" id="theme-toggle">
+                        <i class='bx bx-moon'></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="tutorial-main">
+            <!-- Tutorial Navigation -->
+            <nav class="tutorial-nav">
+                <div class="nav-content">
+                    <h3>Tutorial Sections</h3>
+                    <ul class="nav-list">
+                        <li><a href="#getting-started" class="nav-link active">Getting Started</a></li>
+                        <li><a href="#product-analysis" class="nav-link">Product Analysis</a></li>
+                        <li><a href="#actor-selection" class="nav-link">Actor Selection</a></li>
+                        <li><a href="#visual-settings" class="nav-link">Visual Settings</a></li>
+                        <li><a href="#hook-strategies" class="nav-link">Hook Strategies</a></li>
+                        <li><a href="#prompt-generation" class="nav-link">Prompt Generation</a></li>
+                        <li><a href="#best-practices" class="nav-link">Best Practices</a></li>
+                        <li><a href="#troubleshooting" class="nav-link">Troubleshooting</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Tutorial Content -->
+            <div class="tutorial-content">
+                <!-- Getting Started Section -->
+                <section id="getting-started" class="tutorial-section active">
+                    <div class="section-header">
+                        <h2><i class='bx bx-play-circle'></i> Getting Started</h2>
+                        <p>Welcome to UGC Prompt Studio! This comprehensive guide will help you create professional UGC video prompts that convert.</p>
+                    </div>
+
+                    <div class="content-grid">
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-target-lock'></i>
+                            </div>
+                            <h3>What is UGC?</h3>
+                            <p>User-Generated Content (UGC) is authentic content created by real customers showcasing products. It's proven to increase conversion rates by up to 79% because viewers trust real people over traditional ads.</p>
+                            <div class="highlight-box">
+                                <strong>Key Benefits:</strong>
+                                <ul>
+                                    <li>Higher trust and authenticity</li>
+                                    <li>Better conversion rates</li>
+                                    <li>Cost-effective marketing</li>
+                                    <li>Increased social proof</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-cog'></i>
+                            </div>
+                            <h3>How UGC Studio Works</h3>
+                            <p>Our 5-step process guides you through creating professional UGC prompts:</p>
+                            <div class="process-steps">
+                                <div class="step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <strong>Product Analysis</strong>
+                                        <p>Upload your product image or describe it manually</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <strong>Actor Selection</strong>
+                                        <p>Choose the perfect creator persona for your audience</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-content">
+                                        <strong>Visual Settings</strong>
+                                        <p>Configure location, lighting, and camera work</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">4</span>
+                                    <div class="step-content">
+                                        <strong>Hook Strategy</strong>
+                                        <p>Create compelling opening hooks that grab attention</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">5</span>
+                                    <div class="step-content">
+                                        <strong>Generate Prompt</strong>
+                                        <p>Get your professional UGC video prompt</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-rocket'></i>
+                            </div>
+                            <h3>Quick Start Guide</h3>
+                            <p>Ready to create your first prompt? Follow these steps:</p>
+                            <div class="quick-start-list">
+                                <div class="quick-step">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Have your product image ready (PNG, JPG, max 16MB)</span>
+                                </div>
+                                <div class="quick-step">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Know your target audience (age, interests, demographics)</span>
+                                </div>
+                                <div class="quick-step">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Decide on your content type (unboxing, review, tutorial, lifestyle)</span>
+                                </div>
+                                <div class="quick-step">
+                                    <i class='bx bx-check-circle'></i>
+                                    <span>Click "Start Creating" and follow the guided process</span>
+                                </div>
+                            </div>
+                            <a href="/" class="btn btn-primary">
+                                <i class='bx bx-play'></i>
+                                Start Creating Now
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Product Analysis Section -->
+                <section id="product-analysis" class="tutorial-section">
+                    <div class="section-header">
+                        <h2><i class='bx bx-search-alt'></i> Product Analysis</h2>
+                        <p>Learn how to effectively analyze your product for optimal UGC creation.</p>
+                    </div>
+
+                    <div class="content-grid">
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-cloud-upload'></i>
+                            </div>
+                            <h3>Image Upload Method</h3>
+                            <p>The AI-powered image analysis provides the most accurate results:</p>
+                            <div class="method-details">
+                                <h4>Best Practices for Product Photos:</h4>
+                                <ul>
+                                    <li><strong>Clear, high-resolution images</strong> - At least 800x800 pixels</li>
+                                    <li><strong>Good lighting</strong> - Natural light or well-lit studio setup</li>
+                                    <li><strong>Clean background</strong> - Minimal distractions</li>
+                                    <li><strong>Show key features</strong> - Branding, colors, textures visible</li>
+                                    <li><strong>Multiple angles</strong> - Upload your best representative shot</li>
+                                </ul>
+                                
+                                <div class="tip-box">
+                                    <i class='bx bx-lightbulb'></i>
+                                    <strong>Pro Tip:</strong> The AI analyzes colors, materials, branding, and design elements to create accurate descriptions for your video prompts.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-edit'></i>
+                            </div>
+                            <h3>Manual Description Method</h3>
+                            <p>When you don't have an image or want more control:</p>
+                            <div class="method-details">
+                                <h4>Writing Effective Descriptions:</h4>
+                                <ul>
+                                    <li><strong>Be specific about colors</strong> - "Deep navy blue" vs "blue"</li>
+                                    <li><strong>Mention materials</strong> - Leather, fabric, metal, plastic</li>
+                                    <li><strong>Include branding</strong> - Logo placement, text, design elements</li>
+                                    <li><strong>Describe size/scale</strong> - Compact, oversized, standard</li>
+                                    <li><strong>Note unique features</strong> - Patterns, textures, special details</li>
+                                </ul>
+                                
+                                <div class="example-box">
+                                    <h4>Example Description:</h4>
+                                    <p>"Premium white leather sneakers with navy blue accents, featuring the Nike swoosh logo on the side, clean minimalist design with white rubber sole, high-quality construction with visible stitching details."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-category'></i>
+                            </div>
+                            <h3>Content Type Selection</h3>
+                            <p>Choose the right content type for your product and goals:</p>
+                            <div class="content-types">
+                                <div class="type-item">
+                                    <i class='bx bx-package'></i>
+                                    <div>
+                                        <strong>Unboxing</strong>
+                                        <p>Perfect for new products, subscription boxes, or creating excitement around first impressions.</p>
+                                    </div>
+                                </div>
+                                <div class="type-item">
+                                    <i class='bx bx-star'></i>
+                                    <div>
+                                        <strong>Review</strong>
+                                        <p>Ideal for established products where you want to build trust through honest feedback.</p>
+                                    </div>
+                                </div>
+                                <div class="type-item">
+                                    <i class='bx bx-play-circle'></i>
+                                    <div>
+                                        <strong>Tutorial</strong>
+                                        <p>Great for complex products that need explanation or demonstration of features.</p>
+                                    </div>
+                                </div>
+                                <div class="type-item">
+                                    <i class='bx bx-home'></i>
+                                    <div>
+                                        <strong>Lifestyle</strong>
+                                        <p>Shows product in natural use, perfect for everyday items and aspirational products.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Actor Selection Section -->
+                <section id="actor-selection" class="tutorial-section">
+                    <div class="section-header">
+                        <h2><i class='bx bx-user'></i> Actor Selection</h2>
+                        <p>Choose the perfect creator persona to connect with your target audience.</p>
+                    </div>
+
+                    <div class="content-grid">
+                        <div class="tutorial-card full-width">
+                            <div class="card-icon">
+                                <i class='bx bx-group'></i>
+                            </div>
+                            <h3>Understanding Our Actor Personas</h3>
+                            <p>Each actor is designed to appeal to specific demographics and use cases:</p>
+                            
+                            <div class="actors-grid">
+                                <div class="actor-profile">
+                                    <div class="actor-info">
+                                        <strong>Maya (22) - Gamer Girl</strong>
+                                        <p>Perfect for: Gaming gear, tech products, energy drinks, snacks</p>
+                                        <p>Audience: Gen-Z gamers, tech enthusiasts, streaming community</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="actor-profile">
+                                    <div class="actor-info">
+                                        <strong>Sarah (34) - Super Mom</strong>
+                                        <p>Perfect for: Family products, household items, time-saving solutions</p>
+                                        <p>Audience: Busy parents, working mothers, family-focused consumers</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="actor-profile">
+                                    <div class="actor-info">
+                                        <strong>Jake (26) - Gym King</strong>
+                                        <p>Perfect for: Fitness equipment, supplements, athletic wear, health products</p>
+                                        <p>Audience: Fitness enthusiasts, athletes, health-conscious consumers</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="actor-profile">
+                                    <div class="actor-info">
+                                        <strong>Emma (24) - Girl Next Door</strong>
+                                        <p>Perfect for: Beauty products, fashion, lifestyle items, everyday essentials</p>
+                                        <p>Audience: Young women, beauty enthusiasts, lifestyle followers</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="actor-profile">
+                                    <div class="actor-info">
+                                        <strong>Zoe (19) - Trendsetter</strong>
+                                        <p>Perfect for: Trendy products, fashion, social media tools, Gen-Z items</p>
+                                        <p>Audience: TikTok users, trend followers, young consumers</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="actor-profile">
+                                    <div class="actor-info">
+                                        <strong>Alex (28) - The Achiever</strong>
+                                        <p>Perfect for: Professional tools, premium products, productivity items</p>
+                                        <p>Audience: Young professionals, career-focused individuals</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-target-lock'></i>
+                            </div>
+                            <h3>Matching Actors to Your Audience</h3>
+                            <div class="matching-guide">
+                                <h4>Consider These Factors:</h4>
+                                <ul>
+                                    <li><strong>Age Demographics</strong> - Match actor age to your target audience</li>
+                                    <li><strong>Lifestyle Alignment</strong> - Choose actors whose lifestyle matches your product use</li>
+                                    <li><strong>Credibility</strong> - Select actors who would realistically use your product</li>
+                                    <li><strong>Platform Preference</strong> - Some actors work better on specific platforms</li>
+                                </ul>
+                                
+                                <div class="tip-box">
+                                    <i class='bx bx-lightbulb'></i>
+                                    <strong>Pro Tip:</strong> When in doubt, Emma (Girl Next Door) and Jake (Gym King) have the broadest appeal across different product categories.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-user-plus'></i>
+                            </div>
+                            <h3>Custom Actor Upload</h3>
+                            <p>Upload your own actor photos for personalized content:</p>
+                            <div class="custom-actor-guide">
+                                <h4>Best Practices:</h4>
+                                <ul>
+                                    <li><strong>Clear face visibility</strong> - Well-lit, front-facing photos</li>
+                                    <li><strong>Appropriate attire</strong> - Matches your brand/product context</li>
+                                    <li><strong>Good image quality</strong> - High resolution, not blurry</li>
+                                    <li><strong>Neutral expression</strong> - Friendly, approachable look</li>
+                                </ul>
+                                
+                                <div class="warning-box">
+                                    <i class='bx bx-error-circle'></i>
+                                    <strong>Important:</strong> Only upload photos you have permission to use. Respect privacy and copyright laws.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Visual Settings Section -->
+                <section id="visual-settings" class="tutorial-section">
+                    <div class="section-header">
+                        <h2><i class='bx bx-camera'></i> Visual Settings</h2>
+                        <p>Configure the perfect visual environment for your UGC video.</p>
+                    </div>
+
+                    <div class="content-grid">
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-map'></i>
+                            </div>
+                            <h3>Location Selection</h3>
+                            <p>Choose the right setting to match your product and audience:</p>
+                            <div class="location-guide">
+                                <div class="location-item">
+                                    <i class='bx bx-buildings'></i>
+                                    <div>
+                                        <strong>Office/Indoor</strong>
+                                        <p>Professional products, B2B items, productivity tools</p>
+                                    </div>
+                                </div>
+                                <div class="location-item">
+                                    <i class='bx bx-home'></i>
+                                    <div>
+                                        <strong>Home</strong>
+                                        <p>Household items, family products, comfort goods</p>
+                                    </div>
+                                </div>
+                                <div class="location-item">
+                                    <i class='bx bx-leaf'></i>
+                                    <div>
+                                        <strong>Outdoor</strong>
+                                        <p>Sports equipment, outdoor gear, lifestyle products</p>
+                                    </div>
+                                </div>
+                                <div class="location-item">
+                                    <i class='bx bx-bed'></i>
+                                    <div>
+                                        <strong>Bedroom</strong>
+                                        <p>Personal care, beauty products, intimate items</p>
+                                    </div>
+                                </div>
+                                <div class="location-item">
+                                    <i class='bx bx-dumbbell'></i>
+                                    <div>
+                                        <strong>Gym</strong>
+                                        <p>Fitness equipment, supplements, athletic wear</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-bulb'></i>
+                            </div>
+                            <h3>Lighting Choices</h3>
+                            <p>Lighting sets the mood and quality of your video:</p>
+                            <div class="lighting-guide">
+                                <div class="lighting-option">
+                                    <strong>Natural Lighting</strong>
+                                    <p>Soft, authentic feel. Perfect for lifestyle and everyday products.</p>
+                                </div>
+                                <div class="lighting-option">
+                                    <strong>Soft Lighting</strong>
+                                    <p>Gentle, flattering. Great for beauty and personal care products.</p>
+                                </div>
+                                <div class="lighting-option">
+                                    <strong>Bright Lighting</strong>
+                                    <p>High-energy, vibrant. Ideal for tech products and energetic content.</p>
+                                </div>
+                                <div class="lighting-option">
+                                    <strong>Dramatic Lighting</strong>
+                                    <p>Bold, attention-grabbing. Perfect for premium or luxury products.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-video'></i>
+                            </div>
+                            <h3>Camera Work & Platform</h3>
+                            <p>Technical settings that impact video quality and platform optimization:</p>
+                            <div class="technical-guide">
+                                <h4>Camera Styles:</h4>
+                                <ul>
+                                    <li><strong>Handheld</strong> - Natural, authentic movement (most popular for UGC)</li>
+                                    <li><strong>Static</strong> - Professional, stable shots for detailed product views</li>
+                                    <li><strong>Dynamic</strong> - Moving camera work for energetic, engaging content</li>
+                                </ul>
+                                
+                                <h4>Platform Optimization:</h4>
+                                <ul>
+                                    <li><strong>TikTok</strong> - Vertical 9:16, fast-paced, trend-focused</li>
+                                    <li><strong>Instagram</strong> - Stories/Reels format, aesthetic focus</li>
+                                    <li><strong>YouTube</strong> - Shorts or long-form, educational content</li>
+                                    <li><strong>Facebook</strong> - Social sharing, broader demographics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hook Strategies Section -->
+                <section id="hook-strategies" class="tutorial-section">
+                    <div class="section-header">
+                        <h2><i class='bx bx-bullseye'></i> Hook Strategies</h2>
+                        <p>Master the art of creating compelling opening hooks that stop the scroll.</p>
+                    </div>
+
+                    <div class="content-grid">
+                        <div class="tutorial-card full-width">
+                            <div class="card-icon">
+                                <i class='bx bx-zap'></i>
+                            </div>
+                            <h3>The Psychology of Hooks</h3>
+                            <p>The first 3 seconds determine if viewers keep watching. Here's what works:</p>
+                            
+                            <div class="psychology-grid">
+                                <div class="psychology-item">
+                                    <i class='bx bx-brain'></i>
+                                    <div>
+                                        <strong>Pattern Interrupt</strong>
+                                        <p>Break expected patterns to capture attention immediately</p>
+                                    </div>
+                                </div>
+                                <div class="psychology-item">
+                                    <i class='bx bx-question-mark'></i>
+                                    <div>
+                                        <strong>Curiosity Gap</strong>
+                                        <p>Create knowledge gaps that viewers must fill by watching</p>
+                                    </div>
+                                </div>
+                                <div class="psychology-item">
+                                    <i class='bx bx-heart'></i>
+                                    <div>
+                                        <strong>Emotional Trigger</strong>
+                                        <p>Connect with feelings: frustration, excitement, fear of missing out</p>
+                                    </div>
+                                </div>
+                                <div class="psychology-item">
+                                    <i class='bx bx-group'></i>
+                                    <div>
+                                        <strong>Social Proof</strong>
+                                        <p>Leverage crowd behavior and testimonials for instant credibility</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-bulb'></i>
+                            </div>
+                            <h3>Problem-Solution Hook</h3>
+                            <p>The most effective hook for product marketing:</p>
+                            <div class="hook-breakdown">
+                                <h4>Structure:</h4>
+                                <ol>
+                                    <li><strong>Identify the problem</strong> - "Struggling with..."</li>
+                                    <li><strong>Agitate the pain</strong> - "It's so frustrating when..."</li>
+                                    <li><strong>Present the solution</strong> - "This changed everything"</li>
+                                </ol>
+                                
+                                <div class="example-box">
+                                    <h4>Example:</h4>
+                                    <p>"Are you tired of your phone dying halfway through the day? I found the solution everyone's been looking for..."</p>
+                                </div>
+                                
+                                <div class="tip-box">
+                                    <i class='bx bx-lightbulb'></i>
+                                    <strong>Pro Tip:</strong> Make the problem relatable to your target audience's daily frustrations.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-search'></i>
+                            </div>
+                            <h3>Other Effective Hook Types</h3>
+                            <div class="hook-types">
+                                <div class="hook-type">
+                                    <strong>Curiosity Gap</strong>
+                                    <p>"You won't believe what happened when I tried this..."</p>
+                                    <span class="use-case">Best for: Surprising results, transformations</span>
+                                </div>
+                                
+                                <div class="hook-type">
+                                    <strong>Social Proof</strong>
+                                    <p>"Everyone's talking about this product - here's why..."</p>
+                                    <span class="use-case">Best for: Trending products, viral items</span>
+                                </div>
+                                
+                                <div class="hook-type">
+                                    <strong>Urgency</strong>
+                                    <p>"Last chance to get this before it sells out..."</p>
+                                    <span class="use-case">Best for: Limited offers, seasonal products</span>
+                                </div>
+                                
+                                <div class="hook-type">
+                                    <strong>Transformation</strong>
+                                    <p>"How I went from struggling to succeeding with this..."</p>
+                                    <span class="use-case">Best for: Before/after products, life improvements</span>
+                                </div>
+                                
+                                <div class="hook-type">
+                                    <strong>Insider Secret</strong>
+                                    <p>"The secret nobody tells you about..."</p>
+                                    <span class="use-case">Best for: Expert knowledge, hidden features</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-edit'></i>
+                            </div>
+                            <h3>Custom Hook Creation</h3>
+                            <p>Tips for writing your own compelling hooks:</p>
+                            <div class="custom-hook-guide">
+                                <h4>Hook Writing Formula:</h4>
+                                <div class="formula-steps">
+                                    <div class="formula-step">
+                                        <span class="step-number">1</span>
+                                        <div>
+                                            <strong>Start with emotion</strong>
+                                            <p>Frustration, excitement, curiosity, fear</p>
+                                        </div>
+                                    </div>
+                                    <div class="formula-step">
+                                        <span class="step-number">2</span>
+                                        <div>
+                                            <strong>Make it personal</strong>
+                                            <p>Use "I", "you", "we" - direct connection</p>
+                                        </div>
+                                    </div>
+                                    <div class="formula-step">
+                                        <span class="step-number">3</span>
+                                        <div>
+                                            <strong>Promise value</strong>
+                                            <p>What will they learn or gain?</p>
+                                        </div>
+                                    </div>
+                                    <div class="formula-step">
+                                        <span class="step-number">4</span>
+                                        <div>
+                                            <strong>Keep it short</strong>
+                                            <p>8-12 words maximum for impact</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="warning-box">
+                                    <i class='bx bx-error-circle'></i>
+                                    <strong>Avoid:</strong> Clickbait that doesn't deliver, overly salesy language, generic statements
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Prompt Generation Section -->
+                <section id="prompt-generation" class="tutorial-section">
+                    <div class="section-header">
+                        <h2><i class='bx bx-magic-wand'></i> Prompt Generation</h2>
+                        <p>Understand how your inputs create professional UGC video prompts.</p>
+                    </div>
+
+                    <div class="content-grid">
+                        <div class="tutorial-card">
+                            <div class="card-icon">
+                                <i class='bx bx-cog'></i>
+                            </div>
+                            <h3>How Prompt Generation Works</h3>
+                            <p>Our AI combines all your inputs to create optimized video prompts:</p>
+                            <div class="generation-process">
+                                <div class="process-item">
+                                    <i class='bx bx-analyze'></i>
+                                    <div>
+                                        <strong>Product Analysis</strong>
+                                        <p>Visual details become precise descriptions</p>
+                                    </div>
+                                </div>
+                                <div class="process-item">
+                                    <i class='bx bx-user-check'></i>
+                                    <div>
+                                        <strong>Actor Integration</strong>
+                                        <p>Persona details create authentic character descriptions</p>

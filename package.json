@@ -1,0 +1,40 @@
+
+{
+  "name": "ugc-prompt-studio-desktop",
+  "version": "1.0.0",
+  "description": "UGC Prompt Studio Desktop App",
+  "main": "electron-main.js",
+  "scripts": {
+    "electron": "electron .",
+    "electron-dev": "electron . --dev",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.ugcstudio.app",
+    "productName": "UGC Prompt Studio",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules",
+      "!dist",
+      "!uploads/*"
+    ],
+    "extraResources": [
+      {
+        "from": "static",
+        "to": "static"
+      },
+      {
+        "from": "templates", 
+        "to": "templates"
+      }
+    ]
+  }
+}

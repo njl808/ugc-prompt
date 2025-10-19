@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGC Prompt Studio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="header-branding">
+                    <h1 class="header-title"><i class='bx bx-video'></i> UGC Prompt Studio</h1>
+                    <p class="header-subtitle">Create high-converting video advertisement prompts</p>
+                </div>
+                <div class="header-actions">
+                    <a href="/api-settings" class="btn btn-ghost tooltip" data-tooltip="Manage API keys and settings">
+                        <i class='bx bx-cog'></i>
+                        <span class="btn-text">Settings</span>
+                    </a>
+                    <a href="/tutorial" class="btn btn-ghost tooltip" data-tooltip="Complete tutorial and user guide">
+                        <i class='bx bx-book-open'></i>
+                        <span class="btn-text">Tutorial</span>
+                    </a>
+                    <a href="/faq" class="btn btn-ghost tooltip" data-tooltip="Frequently asked questions">
+                        <i class='bx bx-help-circle'></i>
+                        <span class="btn-text">FAQ</span>
+                    </a>
+                    <button class="btn btn-secondary tooltip" id="new-project" data-tooltip="Start a new project (clears all data)">
+                        <i class='bx bx-plus'></i>
+                        <span class="btn-text">New Project</span>
+                    </button>
+                    <button class="btn btn-ghost tooltip" id="help-toggle" data-tooltip="Show keyboard shortcuts (Ctrl+?)">
+                        <i class='bx bx-question-mark'></i>
+                    </button>
+                    <div class="theme-selector">
+                        <button class="btn btn-ghost tooltip" id="theme-toggle" data-tooltip="Choose theme">
+                            <i class='bx bx-palette'></i>
+                        </button>
+                        <div class="theme-dropdown" id="theme-dropdown">
+                            <div class="theme-option" data-theme="light">
+                                <div class="theme-preview"></div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Light</div>
+                                    <div class="theme-description">Clean and bright</div>
+                                </div>
+                            </div>
+                            <div class="theme-option" data-theme="dark">
+                                <div class="theme-preview"></div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Dark</div>
+                                    <div class="theme-description">Easy on the eyes</div>
+                                </div>
+                            </div>
+                            <div class="theme-option" data-theme="cyberpunk">
+                                <div class="theme-preview"></div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Cyberpunk</div>
+                                    <div class="theme-description">Neon and futuristic</div>
+                                </div>
+                            </div>
+                            <div class="theme-option" data-theme="sunset">
+                                <div class="theme-preview"></div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Sunset</div>
+                                    <div class="theme-description">Warm and cozy</div>
+                                </div>
+                            </div>
+                            <div class="theme-option" data-theme="ocean">
+                                <div class="theme-preview"></div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Ocean</div>
+                                    <div class="theme-description">Cool and refreshing</div>
+                                </div>
+                            </div>
+                            <div class="theme-option" data-theme="forest">
+                                <div class="theme-preview"></div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Forest</div>
+                                    <div class="theme-description">Natural and calming</div>
+                                </div>
+                            </div>
+                            <div class="theme-option" data-theme="royal">
+                                <div class="theme-preview"></div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Royal</div>
+                                    <div class="theme-description">Elegant and luxurious</div>
+                                </div>
+                            </div>
+                            <div class="theme-option" data-theme="rose">
+                                <div class="theme-preview"></div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Rose</div>
+                                    <div class="theme-description">Romantic and soft</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <!-- Studio Progress Navigation -->
+            <div class="studio-tabs">
+                <div class="tab-nav">
+                    <!-- Progress segments that connect buttons -->
+                    <div class="progress-segment" data-segment="1"></div>
+                    <div class="progress-segment" data-segment="2"></div>
+                    <div class="progress-segment" data-segment="3"></div>
+                    <div class="progress-segment" data-segment="4"></div>
+                    
+                    <button class="tab-btn active" data-tab="product" data-step="1">
+                        <i class='bx bx-cube'></i>
+                        <div class="tab-label">Product</div>
+                    </button>
+                    <button class="tab-btn" data-tab="actor" data-step="2">
+                        <i class='bx bx-user'></i>
+                        <div class="tab-label">Actor</div>
+                    </button>
+                    <button class="tab-btn" data-tab="visual" data-step="3">
+                        <i class='bx bx-camera'></i>
+                        <div class="tab-label">Visual</div>
+                    </button>
+                    <button class="tab-btn" data-tab="hook" data-step="4">
+                        <i class='bx bx-bullseye'></i>
+                        <div class="tab-label">Hook</div>
+                    </button>
+                    <button class="tab-btn" data-tab="generate" data-step="5">
+                        <i class='bx bx-magic-wand'></i>
+                        <div class="tab-label">Generate</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Tab -->
+            <div class="tab-panel active" id="product-tab">
+                <div class="panel-header">
+                    <h2>Product Description</h2>
+                    <p>Define your product and how it should be analyzed</p>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Product Info -->
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class='bx bx-info-circle'></i>
+                            <h3>Product Information</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-field">
+                                <label>Product Name 
+                                    <span class="help-icon tooltip" data-tooltip="Enter the exact name of your product as it appears on packaging">?</span>
+                                </label>
+                                <input type="text" id="product-name" placeholder="e.g., Nike Air Force 1" maxlength="100" required>
+                                <div class="character-counter">0/100</div>
+                            </div>
+                            <div class="form-field">
+                                <label>Target Audience 
+                                    <span class="help-icon tooltip" data-tooltip="Describe who would be most interested in this product">?</span>
+                                </label>
+                                <input type="text" id="target-audience" placeholder="e.g., Young professionals, Fitness enthusiasts" maxlength="200">
+                                <div class="character-counter">0/200</div>
+                            </div>
+                            <div class="form-field">
+                                <label>Content Type 
+                                    <span class="help-icon tooltip" data-tooltip="Choose the style of UGC video you want to create">?</span>
+                                </label>
+                                <div class="content-type-grid">
+                                    <!-- Content type cards will be dynamically generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Analysis Method -->
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <i class='bx bx-search'></i>
+                            <h3>Analysis Method</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="method-options">
+                                <!-- Analysis method cards will be dynamically generated by JavaScript -->
+                            </div>
+
+
+                            <!-- Upload Zone -->
+                            <div class="upload-zone" id="upload-zone">
+                                <i class='bx bx-image-add'></i>
+                                <h4>Drop your product image here</h4>
+                                <p>or click to browse files</p>
+                                <small>PNG, JPG, JPEG, GIF, WebP • Max 16MB</small>
+                                <input type="file" id="image-input" accept="image/*" style="display: none;">
+                            </div>
+
+                            <!-- Manual Input -->
+                            <div class="manual-zone" id="manual-zone" style="display: none;">
+                                <div class="form-field">
+                                    <label>Detailed Product Description 
+                                        <span class="help-icon tooltip" data-tooltip="Describe your product's appearance, materials, colors, and key features in detail">?</span>
+                                    </label>
+                                    <textarea id="manual-description" rows="6" placeholder="Describe your product in detail - materials, colors, design, features, etc." maxlength="1000" required></textarea>
+                                    <div class="character-counter">0/1000</div>
+                                </div>
+                                <button class="btn btn-primary tooltip" id="use-manual-btn" type="button" data-tooltip="Use this description for prompt generation">
+                                    <i class='bx bx-check'></i>
+                                    <span class="btn-text">Use Manual Description</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis Results -->
+                <div class="analysis-results" id="analysis-results" style="display: none;">
+                    <div class="card-header">
+                        <i class='bx bx-check-circle'></i>
+                        <h3>Analysis Complete</h3>
+                    </div>
+                    <div class="analysis-preview" id="analysis-preview">
+                        <!-- Analysis results will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actor & Performance Tab -->
+            <div class="tab-panel" id="actor-tab">
+                <div class="panel-header">
+                    <h2>Actor & Performance</h2>
+                    <p>Define who creates the content and how they should perform</p>
+                </div>
+
+                <!-- Cast Your Actor - Full Width -->
+                <div class="section-card">
+                    <div class="card-header">
+                        <i class='bx bx-movie-play'></i>
+                        <h3>Cast Your Actor</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="selection-group">
+                            <label>Select Your Actor</label>
+                            <div class="option-cards character-cards">
+                                <!-- Actor cards will be dynamically generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Style - Full Width Below -->
+                <div class="section-card">
+                    <div class="card-header">
+                        <i class='bx bx-movie-play'></i>
+                        <h3>Performance Style</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="performance-grid">
+                            <!-- Performance style cards will be dynamically generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual & Technical Tab -->
+            <div class="tab-panel" id="visual-tab">
+                <div class="panel-header">
+                    <h2>Visual & Technical</h2>
+                    <p>Configure camera work, lighting, and technical specifications</p>
+                </div>
+
+                <!-- Choose Your Location - Full Width Top -->
+                <div class="section-card location-showcase">
+                    <div class="card-header">
+                        <i class='bx bx-map'></i>
+                        <h3>Choose Your Location</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="selection-group" data-setting="location">
+                            <label>Select Your Setting</label>
+                            <div class="option-cards location-cards">
+                                <!-- Location cards will be dynamically generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visual-grid">
+                    <!-- Video Settings -->
+                    <div class="section-card">
+                        <div class="card-header">
+                            <i class='bx bx-video'></i>
+                            <h3>Video Settings</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="selection-group" data-setting="platform">
+                                <label>Platform</label>
+                                <div class="option-cards">
+                                    <!-- Platform options will be dynamically generated -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lighting & Camera -->
+                    <div class="section-card">
+                        <div class="card-header">
+                            <i class='bx bx-bulb'></i>
+                            <h3>Lighting & Camera</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="selection-group" data-setting="lighting">
+                                <label>Lighting Style</label>
+                                <div class="option-cards">
+                                    <!-- Lighting options will be dynamically generated -->
+                                </div>
+                            </div>
+
+                            <div class="selection-group" data-setting="camera">
+                                <label>Camera Style</label>
+                                <div class="option-cards">
+                                    <!-- Camera options will be dynamically generated -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sales Hook & Message Tab -->
+            <div class="tab-panel" id="hook-tab">
+                <div class="panel-header">
+                    <h2>Sales Hook & Message</h2>
+                    <p>The compelling hook that grabs attention</p>
+                </div>
+
+                <div class="hook-grid">
+                    <div class="section-card">
+                        <div class="card-header">
+                            <i class='bx bx-bullseye'></i>
+                            <h3>Hook Strategy</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="selection-group">
+                                <label>Select Hook Strategy</label>
+                                <div class="option-cards hook-cards">
+                                    <!-- Hook strategy cards will be dynamically generated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <div class="form-field">
+                                <label>Custom Message (Optional) 
+                                    <span class="help-icon tooltip" data-tooltip="Override the default hook with your own custom message or call-to-action">?</span>
+                                </label>
+                                <textarea id="custom-message" rows="3" placeholder="Add your own custom hook or message to personalize the prompt..." maxlength="300"></textarea>
+                                <div class="character-counter">0/300</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generate Prompt Tab -->
+            <div class="tab-panel" id="generate-tab">
+                <div class="panel-header">
+                    <h2>Generate Prompt</h2>
+                    <p>Create your final UGC video prompt</p>
+                </div>
+
+                <div class="generation-container">
+                    <!-- Enhancement Options -->
+                    <div class="section-card">
+                        <div class="card-header">
+                            <i class='bx bx-cog'></i>
+                            <h3>Enhancement Options</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="enhancement-grid">
+                                <!-- Enhancement option cards will be dynamically generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <div class="generate-section">
+                        <button class="btn btn-primary btn-generate tooltip" id="generate-prompt" data-tooltip="Create your final UGC video prompt">
+                            <i class='bx bx-magic-wand'></i>
+                            <span class="btn-text">Generate UGC Prompt</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Generated Prompt -->
+                <div class="prompt-results" id="prompt-results" style="display: none;">
+                    <div class="section-card">
+                        <div class="card-header">
+                            <i class='bx bx-check-circle'></i>
+                            <h3>Generated UGC Prompt</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="prompt-display" id="prompt-display">
+                                <!-- Generated prompt will be inserted here -->
+                            </div>
+                            <div class="prompt-actions">
+                                <button class="btn btn-secondary tooltip" id="copy-prompt" data-tooltip="Copy prompt to clipboard">
+                                    <i class='bx bx-copy'></i>
+                                    <span class="btn-text">Copy Prompt</span>
+                                </button>
+                                <button class="btn btn-primary tooltip" id="regenerate-prompt" data-tooltip="Generate a new version of the prompt">
+                                    <i class='bx bx-refresh'></i>
+                                    <span class="btn-text">Regenerate</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="navigation-container">
+                <div class="nav-actions">
+                    <button class="btn btn-secondary tooltip" id="prev-tab" style="display: none;" data-tooltip="Go to previous step (Alt + ←)">
+                        <i class='bx bx-chevron-left'></i>
+                        <span class="btn-text">Previous</span>
+                    </button>
+                    <button class="btn btn-primary tooltip" id="next-tab" data-tooltip="Go to next step (Alt + →)">
+                        <span class="btn-text">Next</span>
+                        <i class='bx bx-chevron-right'></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Toast Notifications -->
+        <div class="toast-container" id="toast-container"></div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loading-overlay" style="display: none;">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Generating your UGC prompt...</div>
+            </div>
+        </div>
+
+        <!-- Keyboard Shortcuts Modal -->
+        <div class="keyboard-shortcuts" id="keyboard-shortcuts">
+            <h3>Keyboard Shortcuts</h3>
+            <div class="shortcut-item">
+                <span class="shortcut-description">Manual Save</span>
+                <div class="shortcut-keys">
+                    <span class="key">Ctrl</span>
+                    <span class="key">S</span>
+                </div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-description">Previous Step</span>
+                <div class="shortcut-keys">
+                    <span class="key">Alt</span>
+                    <span class="key">←</span>
+                </div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-description">Next Step</span>
+                <div class="shortcut-keys">
+                    <span class="key">Alt</span>
+                    <span class="key">→</span>
+                </div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-description">Close Modals</span>
+                <div class="shortcut-keys">
+                    <span class="key">Esc</span>
+                </div>
+            </div>
+            <div class="shortcut-item">
+                <span class="shortcut-description">Show/Hide This Help</span>
+                <div class="shortcut-keys">
+                    <span class="key">Ctrl</span>
+                    <span class="key">?</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <button class="btn btn-secondary" onclick="document.getElementById('keyboard-shortcuts').classList.remove('visible')">
+                    <i class='bx bx-x'></i>
+                    <span class="btn-text">Close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Auto-save Indicator -->
+        <div class="auto-save-indicator" id="auto-save-indicator" style="display: none;">
+            <div class="save-status">
+                <i class='bx bx-check-circle'></i>
+                <span>Auto-saved</span>
+            </div>
+        </div>
+
+        <!-- Welcome Message for First-time Users -->
+        <div class="welcome-banner" id="welcome-banner" style="display: none;">
+            <div class="welcome-content">
+                <div class="welcome-icon">
+                    <i class='bx bx-party'></i>
+                </div>
+                <div class="welcome-text">
+                    <h3>Welcome to UGC Prompt Studio!</h3>
+                    <p>Ready to create amazing video prompts? Let's take a quick tour to get you started.</p>
+                </div>
+                <div class="welcome-actions">
+                    <button class="btn btn-primary" id="start-tour">
+                        <i class='bx bx-play'></i>
+                        Start Tour
+                    </button>
+                    <button class="btn btn-ghost" id="skip-tour">
+                        Skip
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/theme-manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/onboarding.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    
+    <!-- Initialize onboarding for new users -->
+    <script>
+        // Auto-start onboarding for new users after page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Show welcome banner for first-time users
+            if (OnboardingTour.shouldShowOnboarding()) {
+                setTimeout(() => {
+                    const banner = document.getElementById('welcome-banner');
+                    if (banner) {
+                        banner.style.display = 'block';
+                        banner.classList.add('slide-in');
+                    }
+                }, 1000);
+            }
+            
+            // Bind welcome banner events
+            document.getElementById('start-tour')?.addEventListener('click', () => {
+                document.getElementById('welcome-banner').style.display = 'none';
+                if (!window.onboardingTour) {
+                    window.onboardingTour = new OnboardingTour();
+                }
+                window.onboardingTour.start();
+            });
+            
+            document.getElementById('skip-tour')?.addEventListener('click', () => {
+                document.getElementById('welcome-banner').style.display = 'none';
+                localStorage.setItem('ugc_studio_onboarding_completed', 'true');
+                if (window.app && window.app.showToast) {
+                    window.app.showToast('Welcome! Explore the interface at your own pace. 👋', 'info');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

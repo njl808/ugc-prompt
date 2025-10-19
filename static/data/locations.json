@@ -1,0 +1,110 @@
+
+{
+  "content_types": [
+    { "id": "unboxing", "name": "Unboxing", "icon": "bx-package", "description": "Customer receives and opens product for first time" },
+    { "id": "review", "name": "Review", "icon": "bx-star", "description": "Honest customer feedback and recommendation" },
+    { "id": "tutorial", "name": "Tutorial", "icon": "bx-play-circle", "description": "Educational content showing product usage" },
+    { "id": "lifestyle", "name": "Lifestyle", "icon": "bx-home", "description": "Product integrated into daily routine" }
+  ],
+  "analysis_methods": [
+    { "id": "upload", "name": "Upload Image", "icon": "bx-cloud-upload", "description": "AI analyzes your product image", "active": true },
+    { "id": "manual", "name": "Manual Description", "icon": "bx-edit", "description": "Describe your product yourself", "active": false }
+  ],
+  "energy_levels": [
+    { "id": "calm", "name": "Calm", "icon": "bx-coffee", "description": "Relaxed and composed presentation" },
+    { "id": "moderate", "name": "Moderate", "icon": "bx-pulse", "description": "Balanced energy level", "active": true },
+    { "id": "high", "name": "High Energy", "icon": "bx-rocket", "description": "Enthusiastic and dynamic" }
+  ],
+  "tones": [
+    { "id": "conversational", "name": "Conversational", "icon": "bx-chat", "description": "Natural, friendly tone", "active": true },
+    { "id": "excited", "name": "Excited", "icon": "bx-party", "description": "Enthusiastic and upbeat" },
+    { "id": "educational", "name": "Educational", "icon": "bx-book", "description": "Informative and instructive" }
+  ],
+  "hook_strategies": [
+    { "id": "problem_solution", "name": "Problem Solution", "icon": "bx-bulb", "description": "Struggling with...? This changed everything", "active": true },
+    { "id": "curiosity", "name": "Curiosity Gap", "icon": "bx-search", "description": "You won't believe what happened when..." },
+    { "id": "urgency", "name": "Urgency", "icon": "bx-time-five", "description": "Last chance to get..." },
+    { "id": "social_proof", "name": "Social Proof", "icon": "bx-group", "description": "Thousands of people are already..." },
+    { "id": "transformation", "name": "Transformation", "icon": "bx-trending-up", "description": "How I went from... to..." },
+    { "id": "insider_secret", "name": "Insider Secret", "icon": "bx-lock-open", "description": "The secret nobody tells you..." }
+  ],
+  "conversion_focus": [
+    { "id": "awareness", "name": "Brand Awareness", "icon": "bx-show", "description": "Build brand recognition" },
+    { "id": "consideration", "name": "Consideration", "icon": "bx-search-alt", "description": "Drive product interest", "active": true },
+    { "id": "conversion", "name": "Direct Sales", "icon": "bx-cart", "description": "Generate immediate purchases" }
+  ],
+  "visual_styles": [
+    { "id": "minimal", "name": "Clean & Minimal", "icon": "bx-minimize", "description": "Simple, clean aesthetic", "active": true },
+    { "id": "vibrant", "name": "Vibrant", "icon": "bx-palette", "description": "Bold, colorful presentation" },
+    { "id": "luxury", "name": "Luxury", "icon": "bx-diamond", "description": "Premium, sophisticated look" },
+    { "id": "trendy", "name": "Trendy", "icon": "bx-trending-up", "description": "Current, fashionable style" }
+  ],
+  "platforms": [
+    { "id": "tiktok", "name": "TikTok", "icon": "bxl-tiktok", "description": "Short-form vertical video" },
+    { "id": "instagram", "name": "Instagram", "icon": "bxl-instagram", "description": "Stories and Reels" },
+    { "id": "youtube", "name": "YouTube", "icon": "bxl-youtube", "description": "Shorts and long-form" },
+    { "id": "facebook", "name": "Facebook", "icon": "bxl-facebook", "description": "Social media posts" }
+  ],
+  "locations": [
+    { 
+      "id": "office", 
+      "name": "Office/Indoor", 
+      "icon": "bx-buildings", 
+      "description": "Professional workspace",
+      "prompt_description": "Modern office environment with clean desk setup, natural light from windows, professional atmosphere with minimal distractions"
+    },
+    { 
+      "id": "home", 
+      "name": "Home", 
+      "icon": "bx-home", 
+      "description": "Comfortable home setting",
+      "prompt_description": "Cozy home interior with warm lighting, comfortable furniture, lived-in feel that creates authentic domestic atmosphere"
+    },
+    { 
+      "id": "outdoor", 
+      "name": "Outdoor", 
+      "icon": "bx-leaf", 
+      "description": "Natural outdoor environment",
+      "prompt_description": "Natural outdoor setting with soft daylight, greenery in background, fresh air ambiance that feels organic and unposed"
+    },
+    { 
+      "id": "studio", 
+      "name": "Studio", 
+      "icon": "bx-camera", 
+      "description": "Professional studio setup",
+      "prompt_description": "Professional studio environment with controlled lighting, clean backdrop, optimal conditions for high-quality content creation"
+    },
+    { 
+      "id": "bedroom", 
+      "name": "Bedroom", 
+      "icon": "bx-bed", 
+      "description": "Personal bedroom space",
+      "prompt_description": "Personal bedroom setting with soft textures, intimate lighting, relaxed atmosphere that feels private and authentic"
+    },
+    { 
+      "id": "gym", 
+      "name": "Gym", 
+      "icon": "bx-dumbbell", 
+      "description": "Fitness environment",
+      "prompt_description": "Active gym environment with fitness equipment visible, energetic atmosphere, motivational setting for health and wellness content"
+    },
+    { 
+      "id": "custom_scene", 
+      "name": "Custom Scene", 
+      "icon": "bx-camera-plus", 
+      "description": "Upload your own scene",
+      "prompt_description": "Custom scene analysis will appear here"
+    }
+  ],
+  "lighting": [
+    { "id": "natural", "name": "Natural", "icon": "bx-sun", "description": "Soft natural daylight" },
+    { "id": "soft", "name": "Soft", "icon": "bx-moon", "description": "Gentle diffused lighting" },
+    { "id": "bright", "name": "Bright", "icon": "bx-brightness", "description": "High-key bright lighting" },
+    { "id": "dramatic", "name": "Dramatic", "icon": "bx-color", "description": "Contrasted dramatic lighting" }
+  ],
+  "camera": [
+    { "id": "handheld", "name": "Handheld", "icon": "bx-mobile-alt", "description": "Natural handheld movement" },
+    { "id": "static", "name": "Static", "icon": "bx-video-recording", "description": "Stable tripod shot" },
+    { "id": "dynamic", "name": "Dynamic", "icon": "bx-refresh", "description": "Moving camera work" }
+  ]
+}

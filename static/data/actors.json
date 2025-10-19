@@ -1,0 +1,101 @@
+
+{
+  "actors": [
+    {
+      "name": "Maya",
+      "age": 22,
+      "role": "Gamer Girl",
+      "bio": "Streams Valorant daily, reviews gaming gear, loves energy drinks & late-night snacks. Genuine reactions, tech-savvy audience.",
+      "image": "/static/images/maya.png",
+      "description": "Maya is a 22 year old woman with an oval face clear fair skin with warm pink undertones defined cheekbones almond shaped hazel eyes framed by straight slightly arched brows a straight medium length nose full lips with a wide natural smile long chestnut brown hair falling past her shoulders and a slim average build with youthful proportions"
+    },
+    {
+      "name": "Sarah",
+      "age": 34,
+      "role": "Super Mom",
+      "bio": "Juggles 3 kids & full-time job. Coffee addict who's brutally honest about what works. Busy parents trust her reviews.",
+      "image": "/static/images/mum.png",
+      "description": "Sarah is a 34 year old woman with an oval face light skin tone with neutral undertones soft cheekbones straight brows framing almond shaped eyes a medium straight nose and medium full lips with a warm approachable smile her hair is medium length and brown and she has an average build with natural proportions."
+    },
+    {
+      "name": "Mike",
+      "age": 38,
+      "role": "Cool Dad",
+      "bio": "Weekend grilling expert, dad joke master, suburban legend. Trustworthy guy who actually tests products with his family.",
+      "image": "/static/images/dad.png",
+      "description": "Mike is a 38 year old man with a broad square face light to medium skin tone with warm undertones strong jawline defined cheekbones straight eyebrows framing deep set almond shaped eyes a medium straight nose full lips with a friendly wide smile short dark brown hair with touches of gray neatly kept and a solid medium build with broad shoulders and an athletic sturdy frame."
+    },
+    {
+      "name": "Jake",
+      "age": 26,
+      "role": "Gym King",
+      "bio": "5am workout warrior, protein shake connoisseur. Reviews everything from supplements to gear. Fitness community loves him.",
+      "image": "/static/images/jake.png",
+      "description": "Jake is a 26 year old man with a square face light to medium skin tone with warm undertones strong jawline prominent cheekbones thick brows framing deep set almond eyes a straight nose and medium lips with a confident smile his hair is short and dark and he has a muscular athletic build with broad shoulders."
+    },
+    {
+      "name": "Emma",
+      "age": 24,
+      "role": "Girl Next Door",
+      "bio": "Your best friend who gives the most honest advice. Relatable, sweet, and genuinely excited about good products. Everyone trusts Emma.",
+      "image": "/static/images/emma.png",
+      "description": "Emma is a 24 year old woman with a soft round face fair skin tone with warm undertones smooth clear complexion rounded cheekbones straight brows framing medium sized almond eyes a short straight nose and medium full lips with a sweet approachable smile her hair is medium brown and shoulder length and she has a petite average build with youthful proportions."
+    },
+    {
+      "name": "Zoe",
+      "age": 19,
+      "role": "Trendsetter",
+      "bio": "TikTok native who spots trends before they blow up. Ring light queen with 500K followers. Gen-Z speaks her language.",
+      "image": "/static/images/zoe.png",
+      "description": "Zoe is a 19 year old woman with a heart shaped face light skin tone with neutral undertones smooth complexion high cheekbones straight brows framing large round eyes a small slightly upturned nose and full lips with a bright expressive smile her hair is long and dark falling past her shoulders and she has a slim build with youthful proportions."
+    },
+    {
+      "name": "Alex",
+      "age": 28,
+      "role": "The Achiever",
+      "bio": "Corporate climber with sophisticated taste. Only endorses quality products. Busy professionals value their curated recommendations.",
+      "image": "/static/images/alex.png",
+      "description": "Alex is a 28 year old man with an oval face light skin tone with neutral undertones well defined jawline straight brows over medium deep set eyes a straight medium nose and thin to medium lips with a confident subtle smile his hair is dark and neatly styled short and he has an average to athletic build with upright posture."
+    },
+    {
+      "name": "Riley",
+      "age": 25,
+      "role": "Creative Soul",
+      "bio": "Freelance designer obsessed with aesthetics. Studio apartment is Instagram-worthy. Creatives follow for design inspiration.",
+      "image": "/static/images/riley.png",
+      "description": "Riley is a 25 year old man with an angular face fair skin tone with cool undertones defined cheekbones slightly arched brows framing almond shaped eyes a medium straight nose and medium lips with a subtle smile his hair is medium length and dark brown worn naturally and he has a slim average build with creative youthful proportions."
+    },
+    {
+      "name": "Jordan",
+      "age": 20,
+      "role": "College Student",
+      "bio": "Budget-conscious dorm life expert. Studies business, works part-time. Students trust their practical, money-saving advice.",
+      "image": "/static/images/jordan.png",
+      "description": "Jordan is a 20 year old person with sun-kissed skin and wind-tousled hair, wearing practical outdoor gear, has a lean athletic build from hiking and climbing, weathered hands with calluses, bright alert eyes, natural confident stance, and gear that shows real use"
+    },
+    {
+      "name": "Luna",
+      "age": 29,
+      "role": "Wellness Queen",
+      "bio": "Certified yoga instructor, mindful living advocate. Morning meditation, green smoothies. Wellness community hangs on every word.",
+      "image": "/static/images/luna.png",
+      "description": "Luna is a 29 year old woman with an oval face light to medium skin tone with warm undertones soft facial features straight brows framing almond shaped eyes a straight nose and full lips with a calm gentle smile her hair is long and dark worn naturally and she has a lean toned build with balanced proportions."
+    },
+    {
+      "name": "Devon",
+      "age": 31,
+      "role": "Tech Guru",
+      "bio": "Gadget reviewer with engineering background. Early adopter who breaks down complex tech simply. Tech enthusiasts trust their expertise.",
+      "image": "/static/images/devon.png",
+      "description": "Devon is a 31 year old man with an oval face light to medium skin tone with cool undertones defined cheekbones straight brows framing medium almond eyes a medium nose and medium lips with a neutral to slight smile his hair is short dark and neatly groomed and he has an average build with balanced proportions."
+    },
+    {
+      "name": "Mia",
+      "age": 27,
+      "role": "Foodie",
+      "bio": "Food blogger always hunting the next great meal. Kitchen gadget collector, recipe developer. Foodies follow for honest taste tests.",
+      "image": "/static/images/mia.png",
+      "description": "Mia is a 27 year old woman with a round face light skin tone with warm undertones smooth complexion rounded cheeks straight brows framing wide almond eyes a small rounded nose and full lips with a natural smile her hair is long and medium brown and she has an average build with a soft natural frame."
+    }
+  ]
+}
