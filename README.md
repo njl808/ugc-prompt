@@ -1,6 +1,6 @@
 # Overview
 
-This is an AI-powered UGC (User-Generated Content) advertisement prompt generator that analyzes product images and creates optimized prompts for generating high-converting video advertisements. The application uses OpenAI's GPT-4V model to analyze uploaded product images and extract key details, then generates comprehensive prompts for UGC video creation with customizable settings for audience targeting, content style, and technical specifications.
+This is an AI-powered UGC (User-Generated Content) advertisement prompt generator that analyzes product images and creates optimized prompts for generating high-converting video advertisements.
 
 # User Preferences
 
@@ -57,3 +57,7 @@ Security measures implemented throughout the application:
 ## Development Environment
 - **Environment variables**: SESSION_SECRET for Flask sessions, OPENAI_API_KEY for AI integration
 - **File system**: Local file storage in uploads directory for temporary image processing
+
+# License
+
+This project is licensed under the [MIT License](./LICENSE).
